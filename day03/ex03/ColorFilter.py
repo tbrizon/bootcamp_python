@@ -6,7 +6,7 @@
 #    By: tbrizon <tbrizon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/07 16:21:45 by tbrizon           #+#    #+#              #
-#    Updated: 2019/11/07 19:18:23 by tbrizon          ###   ########.fr        #
+#    Updated: 2019/11/08 15:26:01 by tbrizon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,10 @@ class ColorFilter():
         array = self.to_blue(array[0][0][::-1])
         return array
 
+    def celluloid(self, array):
+        print(array.linespace())
+
+
     
 
 if __name__ == "__main__":
@@ -42,10 +46,11 @@ if __name__ == "__main__":
     cp = ColorFilter()
     
     a = imp.load('./42AI.png')
-    a = cp.to_red(a)
+    imp.display(a)
+    a = cp.to_green(a)
     
     imp.display(a)
     #cf = ColorFilter()
     #arr = cf.invert(arr)
-    #imp.display(arr)
+    #imp.display(arr)q
     

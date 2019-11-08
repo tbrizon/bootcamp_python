@@ -6,7 +6,7 @@
 #    By: tbrizon <tbrizon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/06 10:21:22 by tbrizon           #+#    #+#              #
-#    Updated: 2019/11/06 14:15:15 by tbrizon          ###   ########.fr        #
+#    Updated: 2019/11/07 10:11:20 by tbrizon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,7 @@ def what_are_the_vars(*args, **kwargs):
     if not args and not kwargs:
         return 
     for lst_v in args:
+        "s{}tr".format("cc")
         setattr(obj, "var_{}".format(i), lst_v)
         i+=1
     for k, value, in kwargs.items():
