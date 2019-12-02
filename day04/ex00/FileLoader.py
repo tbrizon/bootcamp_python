@@ -6,7 +6,7 @@
 #    By: tbrizon <tbrizon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/08 16:28:08 by tbrizon           #+#    #+#              #
-#    Updated: 2019/11/08 16:58:56 by tbrizon          ###   ########.fr        #
+#    Updated: 2019/11/27 11:19:33 by tbrizon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ class FilerLoader():
         
 if __name__ == "__main__":
     fl = FilerLoader
-    a = fl.load('~/goinfre/athlete_events.csv')
+    a = fl.load('../ressources/athlete_events.csv')
     fl.display(a, -271114)
     fl.display(a, -1)
     
