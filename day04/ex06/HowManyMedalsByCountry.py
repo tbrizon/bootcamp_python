@@ -6,7 +6,7 @@
 #    By: tbrizon <tbrizon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/12/02 13:28:25 by tbrizon           #+#    #+#              #
-#    Updated: 2019/12/02 14:12:29 by tbrizon          ###   ########.fr        #
+#    Updated: 2019/12/02 15:14:20 by tbrizon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ def HowManyMedalsByCountry(data, country):
     x = data.loc[(data['Team'] == country)]
     grouped = x.groupby(['Year', 'Medal']).size().unstack(fill_value = 0)
     grouped = grouped.rename(columns={'Bronze' : "B", 'Silver' : 'S', 'Gold' : 'G'})
-    print(grouped.reindex(columns = ['G', 'S', 'B']).to_dict('index'))
+    return (grouped.reindex(columns = ['G', 'S', 'B']).to_dict('index'))
 
 if __name__ == "__main__":
     data = FilerLoader.load('/private/tmp/tbrizon/bootcamp_python/day04/ressources/athlete_events.csv')
