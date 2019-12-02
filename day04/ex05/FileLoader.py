@@ -1,27 +1,34 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    HowManyMedals.py                                   :+:      :+:    :+:    #
+#    FileLoader.py                                      :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: tbrizon <tbrizon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/12/02 11:17:24 by tbrizon           #+#    #+#              #
-#    Updated: 2019/12/02 13:16:04 by tbrizon          ###   ########.fr        #
+#    Created: 2019/11/08 16:28:08 by tbrizon           #+#    #+#              #
+#    Updated: 2019/11/08 16:58:56 by tbrizon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 import pandas as pd
-from FileLoader import FilerLoader
-import numpy as np
 
-def HowManyMedals(data, name):
-    x = data.loc[(data['Name'] == name)]
-    ym = x.groupby(["Year", "Medal"])
-    value = ym.size().unstack(fill_value=0)
-    value = value.to_dict('index')
-    print (value)
+class FilerLoader():
     
+    def __init__(self):
+        pass
 
+
+    def load(path):
+        data = pd.read_csv(path)
+        print("size : {}".format(data.size))
+        return data
+    
+    def display(df, n):
+        print(df.head(n))
+        
 if __name__ == "__main__":
-    data = FilerLoader.load('/private/tmp/tbrizon/bootcamp_python/day04/ressources/athlete_events.csv')
-    HowManyMedals(data, 'Kjetil Andr Aamodt')
+    fl = FilerLoader
+    a = fl.load('~/goinfre/athlete_events.csv')
+    fl.display(a, -271114)
+    fl.display(a, -1)
+    
